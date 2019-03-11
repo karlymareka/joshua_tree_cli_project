@@ -1,0 +1,5 @@
+require_relative "./joshua_tree/version"
+require_relative "./joshua_tree/cli"
+require_relative "./joshua_tree/campgroundnames"
+require_relative "./joshua_tree/campgroundinfo"
+require_relative "./joshua_tree/scraper" 

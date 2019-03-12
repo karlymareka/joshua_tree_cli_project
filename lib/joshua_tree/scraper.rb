@@ -4,15 +4,21 @@ require 'open-uri'
 
 class JoshuaTree::Scraper
 
-  def self.scrape
+  @campgrounds = []
+
+  def self.scrape_menu
     doc = Nokogiri::HTML(open('https://www.nps.gov/jotr/planyourvisit/campgrounds.htm'))
-    doc.css("h3.ActivityListing-title").text
-    doc.css("div.ActivityListing a").each do |campground|
-      puts campground.css("div.ActivityListing-titleContainer h3").text
+    doc.css("div.ActivityListing").text
+    doc.css("div.ActivityListing").each do |campground|
+      name = campground.css("h3.ActivityListing-title").text
+      url = campground.css("a")[0]['href']
+      JoshuaTree::Campground.new(name, url)
     end
-    #html =
-    #File.read(https://www.nps.gov/jotr/planyourvisit/campgrounds.htm)
-    #webpage = Nokogiri::HTML(html)
+  end
+
+  def self.scrape_details(campground)
+    doc = Nokogiri::HTML(open(''))
+    doc.css('')
   end
 
 

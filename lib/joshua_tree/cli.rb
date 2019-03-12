@@ -14,7 +14,7 @@ class JoshuaTree::CLI
 
   def list_campgrounds
     JoshuaTree::Scraper.scrape_menu
-    puts JoshuaTree::Campground.all 
+    JoshuaTree::Campground.all.each {|campground| puts campground.name}  
 
   end
 

@@ -1,3 +1,0 @@
-class JoshuaTree::CampgroundInfo
-
-end

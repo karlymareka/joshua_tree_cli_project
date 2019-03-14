@@ -2,7 +2,7 @@
 class JoshuaTree::CLI
 
   def call
-    type_num = welcome
+    welcome
     list_campgrounds
     campground_info
   end
@@ -20,20 +20,20 @@ class JoshuaTree::CLI
 
   def campground_info
     @chosen_campground = gets.strip.downcase
-    puts @chosen_campground
     JoshuaTree::Campground.all.each do |campground|
       if campground.name.downcase == @chosen_campground
         puts campground.info
       end
     end
-    puts "Enter '1' for main menu or enter 'exit' to quit."
-    choice = gets.strip.downcase
-    if choice == "1"
-      call
-    elsif choice == "exit"
-      goodbye
-    else
-      puts "I don't know what you mean."
+    choice = nil
+    until choice == '1' || choice == 'exit'
+      puts "Enter '1' for main menu or enter 'exit' to quit."
+      choice = gets.strip.downcase
+      if choice == "1"
+        call
+      elsif choice == "exit"
+        goodbye
+      end
     end
   end
 

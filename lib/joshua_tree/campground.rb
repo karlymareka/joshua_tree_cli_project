@@ -1,11 +1,12 @@
 class JoshuaTree::Campground
 
   @@all = []
-  attr_reader :name, :url 
+  attr_reader :name, :url, :info
 
-  def initialize(name, url)
+  def initialize(name, url, info)
     @name = name
     @url = url
+    @info = info
     @@all << self
   end
 

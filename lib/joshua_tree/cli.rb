@@ -1,4 +1,5 @@
 # CLI Controller
+require 'colorize'
 class JoshuaTree::CLI
 
   def call
@@ -15,14 +16,16 @@ class JoshuaTree::CLI
     if JoshuaTree::Campground.all.empty?
       JoshuaTree::Scraper.scrape_menu
     end
-    JoshuaTree::Campground.all.each {|campground| puts campground.name}
+    JoshuaTree::Campground.all.each  do |campground|
+      puts campground.name.colorize(:green)
+    end
   end
 
   def campground_info
     @chosen_campground = gets.strip.downcase
     JoshuaTree::Campground.all.each do |campground|
       if campground.name.downcase == @chosen_campground
-        puts campground.info
+        puts campground.info.colorize(:light_blue)
       end
     end
     choice = nil

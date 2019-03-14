@@ -17,10 +17,4 @@ class JoshuaTree::Scraper
     end
   end
 
-  def self.scrape_details(campground)
-    doc = Nokogiri::HTML(open(''))
-    doc.css('')
-  end
-
-
 end

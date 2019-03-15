@@ -6,7 +6,7 @@ class JoshuaTree::Scraper
 
   @campgrounds = []
 
-  def self.scrape_menu
+  def self.scrape
     doc = Nokogiri::HTML(open('https://www.nps.gov/jotr/planyourvisit/campgrounds.htm'))
     doc.css("div.ActivityListing").text
     doc.css("div.ActivityListing").each do |campground|

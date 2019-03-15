@@ -29,7 +29,7 @@ class JoshuaTree::CLI
     puts "\nEnter the name of one of the following park campgrounds for more information."
     puts ""
     JoshuaTree::Campground.all.each  do |campground|
-      puts campground.name.colorize(:green)
+      puts campground.name.colorize(:blue)
     end
     puts ""
     list_info
@@ -37,6 +37,9 @@ class JoshuaTree::CLI
 
   def list_info
     chosen_campground = gets.strip.downcase
+    if chosen_campground == "exit"
+      goodbye
+    end 
     campground_info = JoshuaTree::Campground.campground_info(chosen_campground)
     unless campground_info == nil
       puts campground_info.colorize(:light_blue)

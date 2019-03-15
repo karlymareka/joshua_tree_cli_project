@@ -11,9 +11,9 @@ class JoshuaTree::Scraper
     doc.css("div.ActivityListing").text
     doc.css("div.ActivityListing").each do |campground|
       name = campground.css("h3.ActivityListing-title").text
-      url = campground.css("a")[0]['href']
+      #url = campground.css("a")[0]['href']
       info = campground.css("p.ActivityListing-description").text
-      JoshuaTree::Campground.new(name, url, info)
+      JoshuaTree::Campground.new(name, info)
     end
   end
 

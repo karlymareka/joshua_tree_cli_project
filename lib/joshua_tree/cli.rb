@@ -12,7 +12,7 @@ class JoshuaTree::CLI
   end
 
   def user_choices
-      puts "Enter '1' to return to campground menu or 'exit' to quit."
+      puts "Enter '1' to see campground menu or 'exit' to quit."
       input = gets.strip.downcase
       case input
       when "1"
@@ -37,8 +37,11 @@ class JoshuaTree::CLI
 
   def list_info
     chosen_campground = gets.strip.downcase
-    puts JoshuaTree::Campground.campground_info(chosen_campground).colorize(:light_blue)
-    puts ""
+    campground_info = JoshuaTree::Campground.campground_info(chosen_campground)
+    unless campground_info == nil
+      puts campground_info.colorize(:light_blue)
+      puts ""
+    end
     user_choices
   end
 

@@ -1,11 +1,10 @@
 class JoshuaTree::Campground
 
   @@all = []
-  attr_reader :name, :url, :info
+  attr_reader :name, :info
 
-  def initialize(name, url, info)
+  def initialize(name, info)
     @name = name
-    @url = url
     @info = info
     @@all << self
   end
@@ -18,11 +17,13 @@ class JoshuaTree::Campground
   end
 
   def self.campground_info(chosen_campground)
+    @chosen_campground_info = nil 
     JoshuaTree::Campground.all.each do |campground|
-      if campground.name.downcase == chosen_campground
-        return campground.info
+      if campground.name.strip.downcase == chosen_campground
+        @chosen_campground_info = campground.info
       end
     end
+    return @chosen_campground_info
   end
 
 end

@@ -9,16 +9,19 @@ class JoshuaTree::CLI
   end
 
   def welcome
-    puts "Welcome! So, you are planning a camping trip to beautiful Joshua Tree National Park? Enter the name of one of the following park campgrounds for more information."
+    puts "Welcome! So, you are planning a camping trip to beautiful Joshua Tree National Park."
   end
 
   def list_campgrounds
+    puts "\n Enter the name of one of the following park campgrounds for more information."
+    puts ""
     if JoshuaTree::Campground.all.empty?
       JoshuaTree::Scraper.scrape_menu
     end
     JoshuaTree::Campground.all.each  do |campground|
       puts campground.name.colorize(:green)
     end
+    puts ""
   end
 
   def campground_info

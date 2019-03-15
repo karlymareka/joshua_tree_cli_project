@@ -13,11 +13,11 @@ class JoshuaTree::Campground
     if @@all.empty?
       JoshuaTree::Scraper.scrape
     end
-    @@all
+    return @@all
   end
 
   def self.campground_info(chosen_campground)
-    @chosen_campground_info = nil 
+    @chosen_campground_info = nil
     JoshuaTree::Campground.all.each do |campground|
       if campground.name.strip.downcase == chosen_campground
         @chosen_campground_info = campground.info

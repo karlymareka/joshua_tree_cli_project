@@ -8,7 +8,6 @@ class JoshuaTree::Scraper
 
   def self.scrape
     doc = Nokogiri::HTML(open('https://www.nps.gov/jotr/planyourvisit/campgrounds.htm'))
-    doc.css("div.ActivityListing").text
     doc.css("div.ActivityListing").each do |campground|
       name = campground.css("h3.ActivityListing-title").text
       info = campground.css("p.ActivityListing-description").text

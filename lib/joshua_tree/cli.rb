@@ -20,7 +20,7 @@ class JoshuaTree::CLI
       when "exit"
         goodbye
       else
-        puts "I'm sorry; I don't understand."
+        puts "I'm sorry; I don't understand. Enter '1' to see campground menu or 'exit' to quit."
         user_choices
       end
   end
@@ -39,7 +39,7 @@ class JoshuaTree::CLI
     chosen_campground = gets.strip.downcase
     if chosen_campground == "exit"
       goodbye
-    end 
+    end
     campground_info = JoshuaTree::Campground.campground_info(chosen_campground)
     unless campground_info == nil
       puts campground_info.colorize(:light_blue)

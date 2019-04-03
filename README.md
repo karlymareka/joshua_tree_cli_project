@@ -1,6 +1,6 @@
 # JoshuaTree
 
-  This gem provides the user with a list of campgrounds in Joshua Tree National Park by scraping the National Park Service website (nps.gov). The user may then select a campground for more information including number of sites, price per night, elevation, and amenities offered. 
+  This gem provides the user with a list of campgrounds in Joshua Tree National Park by scraping the National Park Service website (nps.gov). The user may then select a campground for more information including number of sites, price per night, elevation, and amenities offered.
 
 ## Installation
 
@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Use this gem to get up-to-date information about Joshua Tree National Park campgrounds. 
 
 ## Development
 

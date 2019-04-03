@@ -1,8 +1,7 @@
-require 'nokogiri'
-require 'open-uri'
-#require 'pry'
+require 'nokogiri' #allows program to parse HTML
+require 'open-uri' #allows program to make HTTP requests
 
-class JoshuaTree::Scraper 
+class JoshuaTree::Scraper
 
   def self.scrape
     doc = Nokogiri::HTML(open('https://www.nps.gov/jotr/planyourvisit/campgrounds.htm'))

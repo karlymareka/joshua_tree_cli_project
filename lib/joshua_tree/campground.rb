@@ -16,14 +16,16 @@ class JoshuaTree::Campground
     return @@all
   end
 
-  def self.campground_info(chosen_campground)
-    @chosen_campground_info = nil
-    JoshuaTree::Campground.all.each do |campground|
-      if campground.name.strip.downcase == chosen_campground
-        @chosen_campground_info = campground.info
-      end
-    end
-    return @chosen_campground_info
+  def self.find_by_name(campground_name)
+    JoshuaTree::Campground.all.find  { |campground| campground.name.strip.downcase == campground_name} 
   end
 
+end
+
+
+def my_method
+  puts "pasta"
+  return "grass"
+  puts "hello"
+  "mountain"
 end

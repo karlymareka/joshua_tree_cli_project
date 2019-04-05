@@ -1,5 +1,3 @@
-require 'nokogiri' #allows program to parse HTML
-require 'open-uri' #allows program to make HTTP requests
 
 class JoshuaTree::Scraper
 

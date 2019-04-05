@@ -1,5 +1,4 @@
 # CLI Controller
-require 'colorize'
 class JoshuaTree::CLI
 
   def call
@@ -40,9 +39,9 @@ class JoshuaTree::CLI
     if chosen_campground == "exit"
       goodbye
     end
-    campground_info = JoshuaTree::Campground.campground_info(chosen_campground)
-    unless campground_info == nil
-      puts campground_info.colorize(:light_blue)
+    campground = JoshuaTree::Campground.find_by_name(chosen_campground)
+    unless campground == nil
+      puts campground.info.colorize(:light_blue)
       puts ""
     end
     user_choices
